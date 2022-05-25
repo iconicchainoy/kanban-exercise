@@ -12,6 +12,7 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  devtool: "source-map",
   output: {
     filename: "bundle.js",
     path: path.resolve("dist"),
