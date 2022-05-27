@@ -1,10 +1,19 @@
 import React, {useEffect} from "react";
 import BoardAPI from './api/board';
 import UserAPI from './api/user';
+import Example1 from './containers/Example1';
+import Example2 from './containers/Example2';
+import {
+  Routes,
+  Route
+} from 'react-router-dom';
+
 
 const App = () => {
 
-  const testiResti = async () => {
+  //this function is for showing the available mocked Rest API,
+  //remove this function when starting the exercise
+  const exampleOfMockAPI = async () => {
     let res = await BoardAPI.getBoardColumns();
     console.log("get board columns", res);
 
@@ -44,33 +53,17 @@ const App = () => {
 
 
   useEffect(() => {
-    testiResti()
+    exampleOfMockAPI();
   }, [])
 
   return (
     <div className="container">
-        <header className="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <a href="/" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <svg className="bi me-2" width="40" height="32"><use href="#bootstrap"></use></svg>
-            <span className="fs-4">Simple header</span>
-          </a>
-
-          <ul className="nav nav-pills">
-            <li className="nav-item"><a href="#" className="nav-link active" aria-current="page">Home</a></li>
-            <li className="nav-item"><a href="#" className="nav-link">Features</a></li>
-            <li className="nav-item"><a href="#" className="nav-link">Pricing</a></li>
-            <li className="nav-item"><a href="#" className="nav-link">FAQs</a></li>
-            <li className="nav-item"><a href="#" className="nav-link">About</a></li>
-          </ul>
-        </header>
-
-        <div className="row mb-3">
-              <div className="col-4 example-grid-col">.col-4</div>
-              <div className="col-4 example-grid-col">.col-4</div>
-              <div className="col-4 example-grid-col">.col-4</div>
-            </div>
-
-      </div>
+      {/*create your own containers and components*/}
+      <Routes>
+        <Route path="/" element={<Example1 />}/>
+        <Route path="/example2" element={<Example2 />} />
+      </Routes>
+    </div>
   );
 }
 
