@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: "./src/index.js",
@@ -25,10 +26,43 @@ module.exports = {
         exclude: /node_modules/,
         use: "babel-loader"
       },
+      {
+          test: /\.(png|svg|gif|jpg|jpeg|eot)$/,
+          loader: 'url-loader'
+      },
+      {
+        test: /\.(woff|woff2|ttf)$/,
+        type: 'asset/resource'
+      },
+
+      {
+        test: /skin\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /content\.css$/i,
+        use: ['css-loader'],
+      },
+      {
+          test:/\.s?css$/,
+          use:[
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: './'
+              }
+            },
+              'css-loader',
+              'sass-loader'
+            ],
+      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    inject: true,
-    template: './public/index.html',
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './public/index.html',
+    }),
+    new MiniCssExtractPlugin(),
+    ],
 }
