@@ -16,7 +16,7 @@ This is iconicchain's UI exercise task. The task is to create UI for a kanban bo
 User should be able to reorder tasks(vertical drag and drop) in columns or drag task from one column to another.
 UI should be visually appealing and drag and drop should have smooth UX, you can use npm package for drag-and-drop e.g. react-beautiful-dnd.
 
-#### The BE has following models:
+#### The BE would have following models:
 - Task:
   - id
   - name
