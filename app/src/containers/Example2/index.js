@@ -9,7 +9,7 @@ const Example2 = () => {
       <div className="row mt-2 mb-2">
         <div className="col-12 example-grid-col">
           <p>Hello 2,<br/>
-          This is just example container, you can remove me!
+          This is just an example container, you can remove me!
           </p>
           <ExampleComponent name={"example2"} />
         </div>
