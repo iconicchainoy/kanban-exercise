@@ -1,7 +1,6 @@
 FROM node:14-alpine
 WORKDIR /app
-COPY ./app/package.json ./
-COPY ./app/yarn.lock ./
-RUN yarn install --frozen-lockfile
-COPY . .
+COPY ./app/ /app
+RUN mkdir /node_modules
+RUN yarn install
 EXPOSE 9000

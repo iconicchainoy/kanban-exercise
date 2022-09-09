@@ -1,4 +1,4 @@
-version: "3"
+version: "2.2"
 
 services:
   app:
@@ -8,7 +8,6 @@ services:
     container_name: kanban.exercise.com
     command: yarn run start
     volumes:
-      - ./app/node_modules
       - ./app:/app
     ports:
       - "9000:9000"
