@@ -34,7 +34,8 @@ UI should be visually appealing and drag and drop should have smooth UX, you can
 The repository doesn't contain the actual BE (*and you don't need to create one*), but all the needed endpoints for the exercise are mocked in /app/src/api folder.
 
 ## Exercise Structure
-This exercise uses React, yarn, webpack and Docker. In order to run the project in your local environment **you need Docker installed** (https://docs.docker.com/engine/install/) **and Docker Compose** (https://docs.docker.com/compose/install/)
+This exercise uses React, yarn, webpack and Docker. In order to run the project in your local environment **you need Docker installed** (https://docs.docker.com/engine/install/)
+**and Docker Compose** (https://docs.docker.com/compose/install/)
 - After Docker installed you first need to run command: **docker-compose build** (builds images for docker).
 - To start exercise container: **docker-compose up** (now you are ready to edit the project, and the app can be accessed from localhost:9000)
 - To stop container: docker-compose down
